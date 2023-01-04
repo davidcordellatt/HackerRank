@@ -1,0 +1,17 @@
+import re
+
+N, M = map(int, input().split())
+
+matrix = []
+
+for _ in range(N):
+    matrix_item = input()
+    matrix.append(matrix_item)
+
+text = []    
+for i in range(M):
+    for j in range(N):
+        text.append(matrix[j][i])
+        
+final_text = ''.join(text)
+print(re.sub( r'(?<=\w)[\W]+(?=\w)',' ', final_text))

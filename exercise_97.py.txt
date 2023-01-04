@@ -1,0 +1,77 @@
+R = int(input())
+card_numbers = [input() for _ in range(R)]
+
+def analize(id):
+  result = True
+  for digit in id:
+    if digit.isdigit() or digit == '-':
+      continue
+    else:
+      result = False
+      break
+  return result
+
+def four_groups(id):
+  resultado = True
+  if '-' in id:
+    if id[4] == '-' and id[9] == '-' and id[14]:
+      resultado = True
+    else:
+      resultado = False
+  return resultado
+
+
+
+def dry(id):
+  non_valids = ['0000','1111', '2222', '3333', '4444', '5555', '6666', '7777', '8888', '9999']
+  if '-' in id:
+    id.split()
+    id = list(filter(('-').__ne__, id))
+    aux = ""
+    for i in id:
+      if i != '-':
+        aux += i
+    id = aux
+    resultado = True
+    for non in non_valids:
+      if non not in id:
+        continue
+      else:
+        resultado = False
+        break
+    return resultado
+  else:
+    resultado = True
+    for non in non_valids:
+      if non not in id:
+        continue
+      else:
+        resultado = False
+        break
+  return resultado
+
+def max_len(id):
+  if '-' in id and len(id) == 19:
+    return True
+
+  elif '-' not in id and len(id) == 16:
+    return True
+
+  else: 
+    return False
+
+def start_with(id):
+  result = True
+  if id[0] == '4' or id[0] == '5' or id[0] == '6':
+    result = True
+  else:
+    result = False
+
+  return result
+
+
+for id in card_numbers:
+  if analize(id) and four_groups(id) and dry(id) and max_len(id) and start_with(id):
+    print('Valid')
+  else:
+    print('Invalid')

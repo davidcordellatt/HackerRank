@@ -1,0 +1,12 @@
+from html.parser import HTMLParser
+
+class MyHtml(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        for ele in attrs:
+            print("->", ele[0], ">", ele[1])
+
+
+lines = MyHtml()
+for _ in range(int(input())):
+    lines.feed(input())

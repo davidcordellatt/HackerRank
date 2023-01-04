@@ -1,0 +1,3 @@
+x, number = list(map(int, input().split()))
+find_j = eval(input())
+print(find_j==number)

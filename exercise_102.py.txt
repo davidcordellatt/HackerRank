@@ -1,0 +1,3 @@
+function = input()
+if len(function) <100:
+  eval(function)

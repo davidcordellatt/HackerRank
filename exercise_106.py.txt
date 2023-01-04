@@ -1,0 +1,19 @@
+def wrapper(f):
+    def fun(l):
+        phone_list = []
+        for n in l:
+            aux = str(n[-10:])
+            new_phone = '+91 '+aux[:5]+' '+aux[5:]
+            phone_list.append(new_phone)
+        phone_list = sorted(phone_list)
+        for i in phone_list:
+            print(i)
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l)

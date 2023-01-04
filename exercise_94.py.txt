@@ -1,0 +1,42 @@
+string = input()
+
+new_string = []
+aux = []
+
+for letter in string:
+  if letter.isalpha():
+    if letter == letter.lower():
+      aux.append(letter)
+
+new_string.extend(aux)
+new_string.sort()
+aux = []
+
+for letter in string:
+  if letter.isalpha():
+    if letter == letter.upper():
+      aux.append(letter)
+      
+aux.sort()
+new_string.extend(aux)
+aux = []
+
+for letter in string:
+  if letter.isdigit():
+    if int(letter) % 2 != 0:
+      aux.append(letter)
+      
+aux.sort()
+new_string.extend(aux)
+aux = []
+
+for letter in string:
+  if letter.isdigit():
+    if int(letter) % 2 == 0:
+      aux.append(letter)
+      
+aux.sort()
+new_string.extend(aux)
+aux = []
+
+print(*new_string, sep="")

@@ -1,0 +1,7 @@
+for _ in range(int(input())):
+    size = int(input())
+    block = list(map(int, input().split()))
+    if block[0] < max(block) > block[-1]:
+        print('No')
+    else:
+        print('Yes')

@@ -1,0 +1,9 @@
+A, D = map(int,input().split())
+athlete = []
+for _ in range(A):
+    athlete.append(list(map(int, input().split())))
+
+idx = int(input())
+
+for i in sorted(athlete, key = lambda x: x[idx]):
+    print(*i)
